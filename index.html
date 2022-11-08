@@ -5,9 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trabalho Dança Gatinho</title>
+    <link rel="stylesheet" href="./stylesheet.css">
+
 </head>
 <body>
+<h1>Trabalho Gatinho =^.^=</h1>
+<h3>Página totalmente aleatória onde mostras vários gatinhos(as) UwU</h3>
+
+<script>
+    const fetchCat = async () =>  await fetch("https://api.thecatapi.com/v1/images/search",
+    ).then((response) => { 
+        return response.json()
+    }).then((data) => {
+        const cats = data[0]["url"];
+        return cats;
+    });    
     
-    
+    fetchCat().then((result) => {
+        const img = document.querySelector("img");
+        img.src = result;
+    });
+</script>  
+<img src=""/>
+
+<h6>PS: Poderia ser outros tipos de gatinhas </h6>    
 </body>
 </html>
